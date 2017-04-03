@@ -1,0 +1,165 @@
+body {
+  background-color: #232323;
+  margin: 0;
+  font-family: "Futura Next", "Montserrat", "Avenir";
+}
+
+li {
+  list-style: none;
+  font-size: 17px;
+}
+
+ul {
+  height: 500px;
+  width: 600px;
+  overflow-y: scroll;
+  position: relative;
+}
+
+.square {
+  width: 30%;
+  height: 18px;
+  background: steelblue;
+  padding-bottom: 30%;
+  float: left;
+  margin: 1.66%;
+  border-radius: 15%;
+  transition: background .6s;
+  color: white;
+  text-align: center;
+
+}
+
+.btnText {
+  line-height: 8;
+  font-size: 30px;
+}
+
+/*#container {
+  width: 800px;
+  margin: 20px auto;
+}*/
+
+.navbar {
+  text-align: center;
+  line-height: 1.1;
+  font-weight: normal;
+  color: white;
+  background: steelblue;
+  margin: 0;
+  text-transform: uppercase;
+  padding: 8px 0;
+}
+
+#enterTeams {
+  font-weight: normal;
+  color: white;
+  background: steelblue;
+  text-decoration: none;
+  font-size: 15px;
+  padding-left: 50px;
+  /*display: none;*/
+  }
+
+.displayTeams {
+  font-weight: normal;
+  color: white;
+  /*background: steelblue;*/
+  text-decoration: none;
+  font-size: 15px;
+  /*padding-left: 50px;*/
+}
+
+#stripe {
+  background: white;
+  height: 30px;
+  text-align: center;
+  color: black;
+}
+
+.selected {
+  background: steelblue;
+  color: white;
+}
+ #colorDisplay {
+   font-size: 200%;
+ }
+
+ #message {
+   display: inline-block;
+   width: 20%;
+   border: none;
+   background: none;
+   text-transform: uppercase;
+   font-weight: 700;
+   color: steelblue;
+   letter-spacing: 1px;
+   font-size: inherit;
+   outline: none;
+   font-family: "Futura Next", "Montserrat", "Avenir";
+ }
+
+ button {
+   border: none;
+   background: none;
+   text-transform: uppercase;
+   height: 100%;
+   font-weight: 700;
+   color: steelblue;
+   letter-spacing: 1px;
+   font-size: inherit;
+   transition: all .3s;
+   outline: none;
+ }
+
+ /*button:hover {
+   color: white;
+   /*background: steelblue;*/
+ }*/
+
+ /*modal style*/
+
+ .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    /*padding-top: 100px; /* Location of the box */*/
+    left: 50%;
+    top: 50%;
+    /*width: 50%;
+    height: 100%; /* Full height */
+    /*overflow: auto; /* Enable scroll if needed */*/*/
+    /*background-color: rgb(0,0,0); /* Fallback color */
+    /*background-color: rgba(0,0,0,0.4);*/ /* Black w/ opacity */
+    transform: translate(-50%, -50%);
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.clickNumber {
+  font-size: 40px;
+  /*border: 2px solid steelblue;*/
+  text-decoration: none;
+}

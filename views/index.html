@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Lacrosse Score Keeper</title>
+    <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  </head>
+  <body>
+
+    <nav class="navbar" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                  <h1>Lacrosse Stats<span><button><a href="#" id="enterTeams">Enter Teams<a></button></span></h1>
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+
+                    </button>
+
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                  </div>
+        </div>
+</nav>
+<!-- <div class="">
+  <h1>Lacrosse Stats<span><button><a href="#" id="enterTeams">Enter Teams<a></button></span></h1>
+</div> -->
+<!-- navbar-inverse navbar-fixed-top -->
+
+
+<!-- Enter Teams Modal -->
+
+<div id="enterTeamsModal" class="modal">
+  <form class="enterTeamsForm" method="post">
+    <div class="modal-content">
+      <p>Enter Teams</p>
+      <span class="close">&times;</span>
+      <input type="text" class="form-control" id="team1" placeholder="Home Team">
+      <input type="text" class="form-control" id="team2" placeholder="Visiting Team">
+      <button type="button" id="teamsSubmit">OK</button>
+    </div>
+  </form>
+
+</div>
+<!-- Faceoff Modal -->
+<div id="faceoffModal" class="modal">
+
+  <!-- Modal content -->
+  <form class="faceOffForm" action="index.html" method="post">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <input type="tel" class="form-control" id="player1" name="telnum" placeholder="Player 1">
+      <input type="tel" class="form-control" id="player2" name="telnum" placeholder="Player 2">
+      <button type="button" id="faceoffPlayers">OK</button>
+    </div>
+  </form>
+</div>
+
+
+
+<!-- Faceoff Winner Modal -->
+<div id="faceoffWinnerModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>Winner?</p>
+    <a id="player1Wins" class="clickNumber" href="#" ></a>
+    <span> or </span>
+    <a id="player2Wins" class="clickNumber" href="#" ></a>
+  </div>
+
+</div>
+
+<!-- Ground Ball Modal -->
+<div id="groundBallModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <input type="tel" class="form-control" id="groundBallWinner" placeholder="# of Ground Ball Winner">
+
+    <button type="button" id="groundBallWins" class="displayTeams"><a href="#" class="homeTeam" id="groundHome"><a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <a href="#" class="awayTeam" id="groundAway"><a></button>
+  </div>
+
+</div>
+
+<!-- Score/Assist Modal -->
+<div id="assistModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <input type="tel" class="form-control" id="scorePlayer" placeholder="Player Scoring">
+    <input type="tel" class="form-control" id="assistPlayer" placeholder="Player Assisting">
+
+    <button type="button" class="displayTeams"><a href="#" class="homeTeam" id="scoreHome"><a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <a href="#" class="awayTeam" id="scoreAway"><a></button>
+  </div>
+
+</div>
+
+<!-- Shot Modal -->
+<div id="shotModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <input type="tel" class="form-control" id="shotTaker" placeholder="# of Shot Taker">
+
+    <button type="button" class="displayTeams"><a href="#" class="homeTeam" id="shotHome"><a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <a href="#" class="awayTeam" id="shotAway"><a></button>
+  </div>
+
+</div>
+
+<!-- Penalty Modal -->
+<div id="penaltyModal" class="modal">
+
+  <!-- Modal content -->
+  <form id="penaltyForm" action="index.html" method="post">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <input type="tel" class="form-control" id="penaltyAgainst" placeholder="Penalty #">
+      <select id="penaltyList">
+        <option value="Penalty">Penalty</option>
+        <option value="Slashing">Slashing</option>
+        <option value="Tripping">Tripping</option>
+        <option value="Cross Checking">Cross Checking</option>
+        <option value="Unsportsmanlike Conduct">Unsportsmanlike Conduct</option>
+        <option value="Unnecessary Roughness">Unnecessary Roughness</option>
+        <option value="Illegal Body Check">Illegal Body Check</option>
+        <option value="Illegal Crosse">Illegal Crosse</option>
+        <option value="Illegal Equipment">Illegal Equipment</option>
+        <option value="Holding">Holding</option>
+        <option value="Interference">Interference</option>
+        <option value="Offsides">Offsides</option>
+        <option value="Pushing">Pushing</option>
+        <option value="Illegal Offensive Screen">Illegal Offensive Screen</option>
+        <option value="Stalling">Stalling</option>
+        <option value="Ward">Warding Off</option>
+      </select>
+      <select id="penaltyTime">
+        <option value="Penalty Time">Penalty Time</option>
+        <option value="30 Sec">30 Seconds</option>
+        <option value="1 Min">1 Minute</option>
+        <option value="2 Min">2 Minutes</option>
+        <option value="3 Min">3 Minutes</option>
+      </select>
+      <button type="button" class="displayTeams"><a href="#" class="homeTeam" id="penaltyHome"><a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <a href="#" class="awayTeam" id="penaltyAway"><a></button>
+    </div>
+  </form>
+
+
+</div>
+
+<!-- Goalie Save Modal -->
+<div id="goalieModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <input type="tel" class="form-control" id="goalieTaker" placeholder="# of Goalie">
+
+    <button type="button" class="displayTeams"><a href="#" class="homeTeam" id="saveHome"><a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <a href="#" class="awayTeam" id="saveAway"><a></button>
+  </div>
+
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-8">
+      <div class="square" id="faceoff"><span class="btnText">Faceoff</span></div>
+      <div class="square" id="groundBall"><span class="btnText">Ground Ball</span></div>
+      <div class="square" id="assist"><span class="btnText">Score/Assist</span></div>
+      <div class="square" id="shot"><span class="btnText">Shot</span></div>
+      <div class="square" id="penalty"><span class="btnText">Penalty</span></div>
+      <div class="square" id="goalieSave"><span class="btnText">Goalie Save</span></div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-4" class="tickerDiv">
+      <ul id="ticker">
+
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+    <!-- <div class="">
+
+      <iframe src="http://www.laxpower.com/common/ratings/?level=boys&year=2017&s=5&layout=widget" width="370" height="450" frameborder="0"></iframe>
+
+    </div> -->
+
+
+    <script type="text/javascript" src="index.js"></script>
+
+  </body>
+</html>
